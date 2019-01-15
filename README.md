@@ -91,7 +91,11 @@ First you'll need to include Facebook Pixel's script. Facebook's docs recommend 
 
 ### Send pixel
 
-At any moment, you can use the `createEvent($eventName, $parameters = [])` function to create a [Standard Event](https://developers.facebook.com/docs/facebook-pixel/reference#events)
+At any moment, you can use the next function to create a [Standard Event](https://developers.facebook.com/docs/facebook-pixel/reference#events)
+
+```
+\LaravelFacebookPixel::createEvent('test', 'test');
+```
 
 ## Changelog
 
