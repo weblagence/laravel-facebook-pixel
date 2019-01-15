@@ -15,9 +15,16 @@ class LaravelFacebookPixelServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'facebook-pixel');
+        
         $this->publishes([
-            __DIR__ . '/../config/facebook-pixel.php' => config_path('facebook-pixel.php'),
-        ], "facebook-pixel");
+            __DIR__ . '/../resources/config/config.php' => config_path('facebook-pixel.php'),
+        ], "config");
+        
+        $this->app['view']->creator(
+            ['facebook-pixel::head', 'facebook-pixel::body'],
+            'WebLAgence\LaravelFacebookPixel\ScriptViewCreator'
+        );
     }
     
     /**
@@ -25,14 +32,13 @@ class LaravelFacebookPixelServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/facebook-pixel.php', 'facebook-pixel');
+        $this->mergeConfigFrom(__DIR__ . '/../resources/config/facebook-pixel.php', 'facebook-pixel');
         
-        $laravelFacebookPixel = new LaravelFacebookPixel(config('facebook-pixel.id'));
+        $laravelFacebookPixel = new LaravelFacebookPixel(config('facebook-pixel.facebook_pixel_id'));
         
         if (config('facebook-pixel.enabled') === false) {
             $laravelFacebookPixel->disable();
         }
-        
         
         $this->app->instance('WebLAgence\LaravelFacebookPixel\LaravelFacebookPixel', $laravelFacebookPixel);
         $this->app->alias(LaravelFacebookPixel::class, 'facebook-pixel');

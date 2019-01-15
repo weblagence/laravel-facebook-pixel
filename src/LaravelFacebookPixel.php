@@ -65,6 +65,14 @@ class LaravelFacebookPixel
     }
     
     /**
+     * @return bool
+     */
+    public function isEnabled()
+    {
+        return $this->enabled;
+    }
+    
+    /**
      * @return string
      */
     public function headContent()
