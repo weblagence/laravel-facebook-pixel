@@ -114,7 +114,7 @@ class LaravelFacebookPixel
     public function createEvent($eventName, $parameters = [])
     {
         $facebookPixelSession = session('facebookPixelSession');
-        $facebookPixelSession = (count($facebookPixelSession) == 0) ? [] : $facebookPixelSession;
+        $facebookPixelSession = !$facebookPixelSession ? [] : $facebookPixelSession;
         $facebookPixel = [
             "name"       => $eventName,
             "parameters" => $parameters,
