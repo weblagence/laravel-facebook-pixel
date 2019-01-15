@@ -28,7 +28,7 @@ class LaravelFacebookPixel
     }
     
     /**
-     * Return the Google Tag Manager id.
+     * Return the Facebook Pixel id.
      *
      * @return string
      */
@@ -49,7 +49,7 @@ class LaravelFacebookPixel
     }
     
     /**
-     * Enable Google Tag Manager scripts rendering.
+     * Enable Facebook Pixel scripts rendering.
      */
     public function enable()
     {
@@ -57,7 +57,7 @@ class LaravelFacebookPixel
     }
     
     /**
-     * Disable Google Tag Manager scripts rendering.
+     * Disable Facebook Pixel scripts rendering.
      */
     public function disable()
     {
