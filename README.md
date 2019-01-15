@@ -61,6 +61,10 @@ return [
      */
     'facebook_pixel_id' => '',
    
+    /*
+     * Enable or disable script rendering. Useful for local development.
+     */
+    'enabled'           => true,
 ];
 
 ```
@@ -75,11 +79,11 @@ First you'll need to include Facebook Pixel's script. Facebook's docs recommend 
 {{-- layout.blade.php --}}
 <html>
   <head>
-    {!! FacebookPixel::headContent() !!}
+    {!! LaravelFacebookPixel::headContent() !!}
     {{-- ... --}}
   </head>
   <body>
-    {!! FacebookPixel::bodyContent() !!}
+    {!! LaravelFacebookPixel::bodyContent() !!}
     {{-- ... --}}
   </body>
 </html>
