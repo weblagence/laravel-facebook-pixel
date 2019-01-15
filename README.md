@@ -1,11 +1,9 @@
 # Facebook Pixel integration for Laravel
 
-[![Latest Version on Packagist][ico-version]][link-packagist]
-[![Software License][ico-license]](LICENSE.md)
-[![Build Status][ico-travis]][link-travis]
-[![Coverage Status][ico-scrutinizer]][link-scrutinizer]
-[![Quality Score][ico-code-quality]][link-code-quality]
-[![Total Downloads][ico-downloads]][link-downloads]
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/weblagence/laravel-facebook-pixel.svg?style=flat-square)](https://packagist.org/packages/weblagence/laravel-facebook-pixel)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
+[![Quality Score](https://img.shields.io/scrutinizer/g/weblagence/laravel-facebook-pixel.svg?style=flat-square)](https://scrutinizer-ci.com/g/weblagence/laravel-facebook-pixel)
+[![Total Downloads](https://img.shields.io/packagist/dt/weblagence/laravel-facebook-pixel.svg?style=flat-square)](https://packagist.org/packages/weblagence/laravel-facebook-pixel)
 
 An easy Facebook Pixel implementation for your Laravel 5 application.
 
