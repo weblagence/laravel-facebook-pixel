@@ -27,10 +27,10 @@ class LaravelFacebookPixelServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__ . '/../config/facebook-pixel.php', 'facebook-pixel');
         
-        $googleTagManager = new LaravelFacebookPixel(config('facebook-pixel.id'));
+        $laravelFacebookPixel = new LaravelFacebookPixel(config('facebook-pixel.id'));
         
         if (config('facebook-pixel.enabled') === false) {
-            $googleTagManager->disable();
+            $laravelFacebookPixel->disable();
         }
         
         
