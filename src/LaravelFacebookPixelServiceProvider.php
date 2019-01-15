@@ -16,10 +16,10 @@ class LaravelFacebookPixelServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'facebook-pixel');
-        
+    
         $this->publishes([
-            __DIR__ . '/../resources/config/config.php' => config_path('facebook-pixel.php'),
-        ], "config");
+            __DIR__.'/../resources/config/facebook-pixel.php' => config_path('facebook-pixel.php'),
+        ], 'config');
         
         $this->app['view']->creator(
             ['facebook-pixel::head', 'facebook-pixel::body'],
