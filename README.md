@@ -7,7 +7,7 @@
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 
-An easy Google Tag Manager implementation for your Laravel 5 application.
+An easy Facebook Pixel implementation for your Laravel 5 application.
 
 WebL'Agence is a french web agency based in Paris. You can find all our projects [on our website](https://weblagence.com).
 
@@ -39,14 +39,14 @@ In L5.4 or below start by registering the package's the service provider and fac
 
 'aliases' => [
     ...
-    'GoogleTagManager' => WebLAgence\LaravelFacebookPixel\LaravelFacebookPixelFacade::class,
+    'LaravelFacebookPixel' => WebLAgence\LaravelFacebookPixel\LaravelFacebookPixelFacade::class,
 ],
 ```
 
 Next, publish the config file:
 
 ```bash
-php artisan vendor:publish --provider="WebLAgence\LaravelFacebookPixel\LaravelFacebookPixelServiceProvider" --tag="config"
+php artisan vendor:publish --provider="WebLAgence\LaravelFacebookPixel\LaravelFacebookPixelServiceProvider"
 ```
 
 ## Configuration
@@ -99,7 +99,7 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Security
 
-If you discover any security related issues, please email freek@spatie.be instead of using the issue tracker.
+If you discover any security related issues, please email jeremy@weblagence.com instead of using the issue tracker.
 
 ## License
 
