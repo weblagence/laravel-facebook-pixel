@@ -2,6 +2,8 @@
 
 namespace WebLAgence\LaravelFacebookPixel;
 
+use Illuminate\Support\Traits\Macroable;
+
 /**
  * Class LaravelFacebookPixel
  * @package WebLAgence\LaravelFacebookPixel
