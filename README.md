@@ -79,11 +79,11 @@ First you'll need to include Facebook Pixel's script. Facebook's docs recommend 
 {{-- layout.blade.php --}}
 <html>
   <head>
-    {!! LaravelFacebookPixel::headContent() !!}
+    @include('facebook-pixel::head')
     {{-- ... --}}
   </head>
   <body>
-    {!! LaravelFacebookPixel::bodyContent() !!}
+    @include('facebook-pixel::body')
     {{-- ... --}}
   </body>
 </html>
@@ -94,7 +94,7 @@ First you'll need to include Facebook Pixel's script. Facebook's docs recommend 
 At any moment, you can use the next function to create a [Standard Event](https://developers.facebook.com/docs/facebook-pixel/reference#events)
 
 ```
-\LaravelFacebookPixel::createEvent('test', 'test');
+\LaravelFacebookPixel::createEvent($eventName, $parameters = []);
 ```
 
 ## Changelog
