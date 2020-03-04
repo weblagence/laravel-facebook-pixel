@@ -16,15 +16,20 @@ class LaravelFacebookPixel
      * @var string
      */
     protected $id;
-    
+    /**
+     * @var string
+     */
+    protected $cspNonceCallback;
+
     /**
      * LaravelFacebookPixel constructor.
-     * @param $config
+     * @param $id
      */
     public function __construct($id)
     {
         $this->id = $id;
         $this->enabled = true;
+        $this->cspNonceCallback = '';
     }
     
     /**
@@ -71,15 +76,39 @@ class LaravelFacebookPixel
     {
         return $this->enabled;
     }
+
+    /**
+     * @return string
+     */
+    public function getCspNonceCallback()
+    {
+        return $this->cspNonceCallback;
+    }
+
+    /**
+     * @param string $callback
+     */
+    public function addCspNonce($callback)
+    {
+        if (!function_exists($callback)) {
+            return;
+        }
+        $this->cspNonceCallback = $callback;
+    }
     
     /**
      * @return string
      */
     public function headContent()
     {
-        return "<!-- Facebook Pixel Code -->
-        <script>
-            !function(f,b,e,v,n,t,s)
+        if ($this->cspNonceCallback) {
+            $row = "<script nonce='" . call_user_func($this->cspNonceCallback) . "'>";
+        } else {
+            $row = "<script>";
+        }
+        return "<!-- Facebook Pixel Code -->".
+            $row.
+            "!function(f,b,e,v,n,t,s)
               {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
                   n.callMethod.apply(n,arguments):n.queue.push(arguments)};
                   if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
@@ -108,7 +137,9 @@ class LaravelFacebookPixel
                 $pixelCode .= "fbq('track', '" . $facebookPixel["name"] . "', " . json_encode($facebookPixel["parameters"]) . ");";
             };
             session()->forget('facebookPixelSession');
-            
+            if($this->cspNonceCallback) {
+                return "<script nonce='" . call_user_func($this->cspNonceCallback) . "'>" . $pixelCode . "</script>";
+            }
             return "<script>" . $pixelCode . "</script>";
         }
         

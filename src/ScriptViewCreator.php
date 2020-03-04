@@ -30,6 +30,7 @@ class ScriptViewCreator
     public function create(View $view)
     {
         $view->with('enabled', $this->laravelFacebookPixel->isEnabled())
+            ->with('nonce', $this->laravelFacebookPixel->getCspNonceCallback())
             ->with('id', $this->laravelFacebookPixel->id());
     }
 }
