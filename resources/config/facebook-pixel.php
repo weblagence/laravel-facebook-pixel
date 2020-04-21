@@ -11,4 +11,6 @@ return [
      * Enable or disable script rendering. Useful for local development.
      */
     'enabled'           => true,
+
+    'csp_callback'      => '',
 ];

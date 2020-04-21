@@ -35,7 +35,7 @@ class LaravelFacebookPixelServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__ . '/../resources/config/facebook-pixel.php', 'facebook-pixel');
         
         $laravelFacebookPixel = new LaravelFacebookPixel(config('facebook-pixel.facebook_pixel_id'));
-        
+        $laravelFacebookPixel->addCspNonce(config('facebook-pixel.csp_callback'));
         if (config('facebook-pixel.enabled') === false) {
             $laravelFacebookPixel->disable();
         }
