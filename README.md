@@ -5,7 +5,7 @@
 [![Quality Score](https://img.shields.io/scrutinizer/g/weblagence/laravel-facebook-pixel.svg?style=flat-square)](https://scrutinizer-ci.com/g/weblagence/laravel-facebook-pixel)
 [![Total Downloads](https://img.shields.io/packagist/dt/weblagence/laravel-facebook-pixel.svg?style=flat-square)](https://packagist.org/packages/weblagence/laravel-facebook-pixel)
 
-An easy Facebook Pixel implementation for your Laravel 5 application.
+An easy Facebook Pixel implementation for your Laravel application.
 
 WebL'Agence is a french web agency based in Paris. You can find all our projects [on our website](https://weblagence.com).
 
