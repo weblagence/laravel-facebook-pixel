@@ -9,11 +9,15 @@
             t.src=v;s=b.getElementsByTagName(e)[0];
             s.parentNode.insertBefore(t,s)}(window, document,'script',
             'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '{{ $id }}');
+        @foreach($id AS $i)
+            fbq('init', '{{ $i }}');
+        @endforeach
         fbq('track', 'PageView');
     </script>
+    @foreach($id AS $i)
     <noscript><img height="1" width="1" style="display:none"
-                   src="https://www.facebook.com/tr?id={{ $id }}&ev=PageView&noscript=1"
+                   src="https://www.facebook.com/tr?id={{ $i }}&ev=PageView&noscript=1"
         /></noscript>
+    @endforeach
     <!-- End Facebook Pixel Code -->
 @endif
