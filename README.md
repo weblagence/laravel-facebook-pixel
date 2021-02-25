@@ -7,8 +7,6 @@
 
 An easy Facebook Pixel implementation for your Laravel application.
 
-WebL'Agence is a french web agency based in Paris. You can find all our projects [on our website](https://weblagence.com).
-
 ## Facebook Pixel
 
 The Facebook pixel is a snippet of JavaScript code that allows you to track visitor activity on your website. It works by loading a small library of functions which you can use whenever a site visitor takes an action (called an event) that you want to track (called a **conversion**). [Tracked conversions](https://developers.facebook.com/docs/facebook-pixel/implementation/conversion-tracking) appear in the [Facebook Ads Manager](https://www.facebook.com/adsmanager) and in the [Facebook Analytics](https://business.facebook.com/analytics) dashboard, where they can be used to measure the effectiveness of your ads, to define [custom audiences](https://developers.facebook.com/docs/facebook-pixel/implementation/custom-audiences) for ad targeting, for [dynamic ads](https://developers.facebook.com/docs/facebook-pixel/implementation/dynamic-ads) campaigns, and to analyze that effectiveness of your website's conversion funnels.
@@ -59,6 +57,11 @@ return [
      */
     'facebook_pixel_id' => '',
    
+    /*
+     * Use this variable instead of `facebook_pixel_id` if you need to use multiple facebook pixels
+     */
+    'facebook_pixel_ids' => [],
+    
     /*
      * Enable or disable script rendering. Useful for local development.
      */
