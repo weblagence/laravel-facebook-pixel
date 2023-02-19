@@ -1,3 +1,5 @@
+# this package is no longer updated
+
 # Facebook Pixel integration for Laravel
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/weblagence/laravel-facebook-pixel.svg?style=flat-square)](https://packagist.org/packages/weblagence/laravel-facebook-pixel)
